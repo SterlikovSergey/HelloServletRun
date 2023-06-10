@@ -12,20 +12,19 @@ import java.time.LocalDate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@WebServlet(value = "/year/*")
-
-public class DayOfYear extends HttpServlet {
+@WebServlet(value = "/date/*")
+public class DayOfWeekRun extends HttpServlet {
     private String input;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         input = req.getPathInfo();
+        PrintWriter writer = resp.getWriter();
         String pattern = "\\d+\\D\\d+\\D\\d+";
         Pattern parr = Pattern.compile(pattern);
         Matcher matcher = parr.matcher(input);
-        if(matcher.find()){
-            PrintWriter writer = resp.getWriter();
-            writer.println("Day of year " + LocalDate.parse(matcher.group()).getDayOfYear());
+        if (matcher.find()) {
+            writer.println("Day of week " + LocalDate.parse(matcher.group()).getDayOfWeek());
         }
-
     }
 }

@@ -5,7 +5,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.Data;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,7 +13,7 @@ import java.time.LocalTime;
 import java.util.Date;
 
 @WebServlet(value = "/date")
-public class DateServlet extends HttpServlet {
+public class DateServletRun extends HttpServlet {
     private final Date currentDate = new Date();
     private final LocalDate date = LocalDate.now();
     private final LocalTime time = LocalTime.now();
