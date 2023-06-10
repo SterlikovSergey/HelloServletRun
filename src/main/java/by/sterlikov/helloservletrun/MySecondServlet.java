@@ -37,9 +37,11 @@ public class MySecondServlet extends HttpServlet {
         }
         session.setAttribute("count", currentParam + 1);
 
+//http://localhost:8080/hi/abc?my=parameter123&another=empty
 
         PrintWriter writer = resp.getWriter(); //запиши в ответ
         writer.println("This is My second response ! " + "Current param: " + currentParam);
+        writer.println("Servlet path " + req.getServletPath());;
         Iterator<String> headersIterator = req.getHeaderNames().asIterator();
         while ((headersIterator.hasNext())) {
             writer.println("\nHeader: " + headersIterator.next());
@@ -51,17 +53,17 @@ public class MySecondServlet extends HttpServlet {
                 .map(cookies -> cookies.getName() + " " + cookies.getValue() + " " + cookies.getMaxAge())
                 .collect(Collectors.toList()));
 
-        resp.sendRedirect("/here");
+       // resp.sendRedirect("/here");
 
 /*        if(currentParam > 105){      // бросаем ошибку
             resp.setStatus(500);
             resp.sendError(500,"Too mach");
         }*/
 
-        if (currentParam > 105) {      // бросаем ошибку
+/*        if (currentParam > 110) {      // бросаем ошибку
             resp.sendRedirect("/here"); // перекинь меня на другую страницу
             Person person = new Person();
 
-        }
+        }*/
     }
 }
