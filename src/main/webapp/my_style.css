@@ -1,0 +1,40 @@
+p{
+    color: blue;
+    background: aqua;
+    font-family: "Big Caslon";
+    font-size: large;
+    text-align: center;
+}
+w{
+    color: black;
+    background: brown;
+}
+body{
+    background-color: blanchedalmond;
+    background-image: url("я.jpg");
+}
+#first_span{
+    color: coral;
+}
+.classCss{
+    font-size: large;
+    color: red;
+}
+table{
+    margin: 20px;
+}
+tr{
+    border-style: solid;
+}
+td{
+    border-style: solid;
+}
+
+input[type=submit]:hover{
+    background-color: olivedrab;
+    width: 80%;
+    visibility: hidden;
+}
+p:hover{
+    width: 100%;
+}
